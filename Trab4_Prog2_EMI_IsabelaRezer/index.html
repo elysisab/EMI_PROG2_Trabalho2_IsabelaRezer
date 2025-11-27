@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Cadastro de personagem</title>
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-size: 100%;
+    padding: 20px;
+    color: #1f2937;
+  }
+
+  h1 { text-align: left; margin-bottom: 20px; color: #ffffff; }
+  h2 { margin-bottom: 12px; color: #a64c4c; }
+  h4 { margin-top: 12px; color: #a64c4c; }
+
+  .container {
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+   }
+
+  form label {
+    display: block;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 4px;
+  }
+
+  input, textarea, select, button {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 14px;
+  }
+
+  textarea { min-height: 60px; resize: vertical; }
+
+  button {
+    background: linear-gradient(90deg, #a64c4c, #a64c4c);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+  }
+
+  button:hover {
+    background: linear-gradient(90deg, #803b3b, #a64c4c);
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  li {
+    background: #eef2ff;
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  
+  #camposPersonagem {
+    margin-top: 10px;
+  }
+
+</style>
+</head>
+<body>
+
+<h1>Cadastro de personagem</h1>
+
+<div class="container">
+  <h2>Cadastrar Novo Personagem</h2>
+    <label>Nome</label>
+    <input type="text" id="titulo">
+
+    <label>Descrição</label>
+    <textarea id="desc"></textarea>
+
+
+    <!-- CAMPOS PERSONAGEM -->
+    <div id="camposPersonagem" style="display:block;">
+      <label>Elemento</label>
+      <select id="elemento">
+        <option value="imaginario">Imaginário</option>
+        <option value="fisico">Físico</option>
+        <option value="vento">Vento</option>
+        <option value="raio">Raio</option>
+        <option value="quantico">Quântico</option>
+        <option value="gelo">Gelo</option>
+        <option value="fogo">Fogo</option>
+      </select>
+
+      <label>Caminho</label>
+      <select id="caminho">
+        <option value="destruicao">Destruição</option>
+        <option value="inexistencia">Inexistência</option>
+        <option value="recordacao">Recordação</option>
+        <option value="abundacia">Abundância</option>
+        <option value="caca">Caça</option>
+        <option value="erudicao">Erudição</option>
+        <option value="harmonia">Harmonia</option>
+        <option value="preservacao">Preservação</option>
+      </select>
+
+      <label>Nível</label>
+      <input type="number" id="nivel">
+
+      <label>Facção</label>
+      <input type="text" id="faccao">
+
+      <label>Raça</label>
+      <input type="text" id="raca">
+    </div>
+
+    <button id="btnAddItem" type="button">Adicionar Item</button>
+</div>
+
+<!-- LISTAS -->
+<div class="container">
+  <h2>Personagens</h2>
+  <ul id="listaPersonagem"></ul>
+</div>
+
+<script src="class.js"></script>
+<script src="personagem.js"></script>
+
+</body>
+</html>
